@@ -33,7 +33,6 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-
                         <div class="col-6">
                             <label class="form-label">REAR LADAR</label>
                             <input type="text" name="rear_ladar" class="form-control" id="projectName" required>
@@ -44,9 +43,18 @@
                             <input type="text" name="front_ladar" class="form-control" id="projectName" required>
                         </div>
                     </div>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <label class="form-label">Status</label>
+                            <select class="form-control" name="isShow" id="exampleFormControlSelect1">
+                                <option value="1">Aktif</option>
+                                <option value="0">Tidak Aktif</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="d-flex justify-content-end mt-4">
                         <button type="button" class="btn btn-light m-0">Cancel</button>
-                        <button type="submit"  class="btn bg-gradient-primary m-0 ms-2">Create
+                        <button type="submit" class="btn bg-gradient-primary m-0 ms-2">Create
                             Project</button>
                     </div>
                 </form>

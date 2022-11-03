@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('bsm')->nullable();
             $table->string('rear_ladar');
             $table->string('front_ladar');
+            $table->boolean('isShow');
             $table->timestamps();
         });
     }

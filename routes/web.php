@@ -25,9 +25,10 @@ Route::get('/', function () {
 Route::get('/dashboard', [LoaderController::class, 'index']);
 
 Route::resource('Loader', LoaderController::class);
+// Route::get('/filter', [LoaderController::class, 'logout']);
 //Protecting Routes
 // Route::middleware(['auth:sanctum'])->group(function () {
-//     Route::get('/logout', [AuthController::class, 'logout']);
+  
 //     Route::get('/profile', [AuthController::class, 'profile']);
 
 //     Route::get('/dokumen/{id}/download', [DokumenController::class, 'download']);

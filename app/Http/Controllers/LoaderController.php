@@ -9,14 +9,22 @@ use Illuminate\Http\Request;
 
 class LoaderController extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $Loader = Loader::all();
+
+        if ($request->filter == 'Aktif') {
+            $Loader = Loader::where('isShow', '=', 1)->get();
+        } elseif ($request->filter == 'Tidak-Aktif') {
+            $Loader = Loader::where('isShow', '=', 0)->get();
+        } else {
+            $Loader = Loader::all();
+        }
+
         return view('dashboard', compact('Loader'));
     }
 
@@ -81,7 +89,7 @@ class LoaderController extends Controller
         $Loader->update($request->all());
 
         return redirect()->route('Loader.index')
-        ->with('edit', 'Loader Berhasil Diedit');
+            ->with('edit', 'Loader Berhasil Diedit');
     }
 
     /**
