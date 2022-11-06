@@ -16,23 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return abort(403, 'Sabar yak.');
+    return redirect('login');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-Route::get('/dashboard', [LoaderController::class, 'index']);
+Route::middleware(['auth'])->group(function () {
 
-Route::resource('Loader', LoaderController::class);
-// Route::get('/filter', [LoaderController::class, 'logout']);
-//Protecting Routes
-// Route::middleware(['auth:sanctum'])->group(function () {
-  
-//     Route::get('/profile', [AuthController::class, 'profile']);
-
-//     Route::get('/dokumen/{id}/download', [DokumenController::class, 'download']);
-//     Route::get('/dokumen/{id}/view', [DokumenController::class, 'view']);
-//     Route::get('{id}/view/{filename}', [DokumenController::class, 'view_dokumen']);
-// });
+    
+    Route::get('/dashboard', [LoaderController::class, 'index']);
+    Route::resource('Loader', LoaderController::class);
+});
 require __DIR__ . '/auth.php';
