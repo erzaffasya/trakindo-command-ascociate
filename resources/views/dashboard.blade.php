@@ -42,7 +42,7 @@
                             </div>
                             <div class="ms-3 my-auto">
 
-                                <h6>{{ $item->oru }}</h6>
+                                <h6>{{ $item->nama_loader }}</h6>
 
                                 <div class="avatar-group">
                                     <p class="text-sm"> WAP </p>
